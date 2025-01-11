@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #34495e;
+}
+
+.sidebar ul li a.active {
+  background-color: #2980b9;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  width: calc(33% - 10px);
+}
+
+.tables {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: #2980b9;
+  color: white;
+}
+
+.toggle-sidebar {
+  display: none; /* Masquer par défaut */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 200px; /* Réduire la largeur de la sidebar */
+      position: absolute; /* Positionner la sidebar */
+      left: -200px; /* Masquer la sidebar */
+      transition: left 0.3s ease; /* Transition douce */
+      z-index: 1000; /* Assurer que la sidebar est au-dessus */
+  }
+
+  .sidebar.active {
+      left: 0; /* Afficher la sidebar */
+  }
+
+  .toggle-sidebar {
+      display: block; /* Afficher le bouton pour toggler la sidebar */
+      position: absolute; 
+      top: 20px; 
+      left: 20px; 
+      background-color: #2980b9; 
+      color: white; 
+      border-radius: 5px; 
+      border:none; 
+      padding:10px; 
+      cursor:pointer; 
+      z-index :1001; /* Au-dessus de la sidebar */
+ }
+}
